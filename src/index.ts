@@ -7,7 +7,7 @@ import userRoutes from "./routes/auth.ts";
 dotenv.config();
 const app: Express = express();
 
-connectToDB();
+await connectToDB();
 app.use(cors());
 app.use(express.json());
 

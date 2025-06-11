@@ -3,6 +3,7 @@ import express, { Express } from "express";
 import connectToDB from "./db/db.ts";
 import cors from "cors";
 import userRoutes from "./routes/auth.ts";
+import recipeRoutes from "./routes/recipes.ts";
 
 dotenv.config();
 const app: Express = express();
@@ -12,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", userRoutes);
+app.use("/api/recipe", recipeRoutes);
 
 const PORT = process.env.PORT || 5000;
 
